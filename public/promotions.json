@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Summer Special Discount",
+    "description": "Get 20% off on all tests this summer. Use code SUMMER20 at checkout.",
+    "validUntil": "2024-08-31"
+  },
+  {
+    "title": "Refer a Friend",
+    "description": "Refer a friend and get 10% off on your next test booking.",
+    "validUntil": "2024-12-31"
+  },
+  {
+    "title": "First-Time User Discount",
+    "description": "New users get $10 off on their first test booking. Limited time offer!",
+    "validUntil": "2024-09-30"
+  },
+  {
+    "title": "Health Checkup Package",
+    "description": "Book a health checkup package and save up to 30% on comprehensive tests.",
+    "validUntil": "2024-10-31"
+  },
+  {
+    "title": "Senior Citizen Discount",
+    "description": "Senior citizens aged 60 and above receive a 15% discount on all tests.",
+    "validUntil": "2024-12-31"
+  },
+  {
+    "title": "Weekend Flash Sale",
+    "description": "Exclusive discounts every weekend! Stay tuned for exciting offers.",
+    "validUntil": "2024-12-31"
+  }
+]
