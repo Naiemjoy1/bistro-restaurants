@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Login = () => {
   return (
     <div className="container mx-auto w-1/2">
@@ -32,6 +34,12 @@ const Login = () => {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
+        <p>
+          New Here?{" "}
+          <Link to="/registration">
+            <span className="text-primary">Registration</span>
+          </Link>
+        </p>
       </form>
     </div>
   );
