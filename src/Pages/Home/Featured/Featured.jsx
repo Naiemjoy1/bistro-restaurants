@@ -5,7 +5,7 @@ import "./Featured.css";
 const Featured = () => {
   return (
     <div
-      className="featured-background text-white"
+      className="featured-background bg-fixed text-white"
       style={{
         backgroundImage: `url(${featuredImg})`,
       }}
