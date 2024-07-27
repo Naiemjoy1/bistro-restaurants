@@ -1,18 +1,37 @@
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Components/Provider/AuthProvider";
 
 const Registration = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+  const { createuser } = useContext(AuthContext);
+  const onSubmit = (data) => {
+    console.log(data);
+    createuser(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    });
+  };
+
   return (
     <div className="container mx-auto w-1/2">
-      <form className="card-body">
+      <form onSubmit={handleSubmit(onSubmit)} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
           </label>
           <input
-            type="email"
-            placeholder="email"
+            type="name"
+            placeholder="name"
+            name="name"
             className="input input-bordered"
-            required
+            {...register("name", { required: true })}
           />
         </div>
         <div className="form-control">
@@ -22,8 +41,9 @@ const Registration = () => {
           <input
             type="email"
             placeholder="email"
+            name="email"
             className="input input-bordered"
-            required
+            {...register("email", { required: true })}
           />
         </div>
         <div className="form-control">
@@ -33,8 +53,14 @@ const Registration = () => {
           <input
             type="password"
             placeholder="password"
+            name="password"
             className="input input-bordered"
-            required
+            {...register("password", {
+              required: true,
+              // minLength: 6,
+              // maxLength: 20,
+              // pattern: /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/,
+            })}
           />
         </div>
         <div className="form-control mt-6">
