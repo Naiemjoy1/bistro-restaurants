@@ -42,7 +42,7 @@ const Registration = () => {
         </div>
         <p>
           Already Have Account?{" "}
-          <Link to="/registration">
+          <Link to="/login">
             <span className="text-primary">Login</span>
           </Link>
         </p>

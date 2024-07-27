@@ -1,15 +1,24 @@
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password);
+  };
+
   return (
     <div className="container mx-auto w-1/2">
-      <form className="card-body">
+      <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
           <input
             type="email"
+            name="email"
             placeholder="email"
             className="input input-bordered"
             required
@@ -21,6 +30,7 @@ const Login = () => {
           </label>
           <input
             type="password"
+            name="password"
             placeholder="password"
             className="input input-bordered"
             required
