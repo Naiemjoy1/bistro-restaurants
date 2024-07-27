@@ -53,7 +53,11 @@ const OurMenu = () => {
           coverImg={soupImg}
         ></MenuCategory>
 
-        <MenuCategory items={drinks}></MenuCategory>
+        <MenuCategory
+          title="drinks"
+          coverImg={soupImg}
+          items={drinks}
+        ></MenuCategory>
       </section>
     </div>
   );
