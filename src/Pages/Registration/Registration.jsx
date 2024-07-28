@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -8,22 +8,33 @@ const Registration = () => {
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
-  const { createuser } = useContext(AuthContext);
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     console.log(data);
-    createuser(data.email, data.password).then((result) => {
+    createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Your work has been saved",
-        showConfirmButton: false,
-        timer: 1500,
-      });
+      updateUserProfile(data.name, data.photo)
+        .then(() => {
+          console.log("user profile update");
+          reset();
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate("/");
+        })
+        .catch((error) => console.log(error));
     });
   };
 
@@ -40,6 +51,18 @@ const Registration = () => {
             name="name"
             className="input input-bordered"
             {...register("name", { required: true })}
+          />
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo Url</span>
+          </label>
+          <input
+            type="text"
+            placeholder="PhotoUrl"
+            name="photo"
+            className="input input-bordered"
+            {...register("photo", { required: true })}
           />
         </div>
         <div className="form-control">
