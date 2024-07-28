@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Components/Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Registration = () => {
   const {
@@ -16,6 +17,13 @@ const Registration = () => {
     createuser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     });
   };
 
