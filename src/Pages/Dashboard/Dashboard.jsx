@@ -7,7 +7,14 @@ const Dashboard = () => {
   return (
     <div className="flex container mx-auto justify-between gap-4">
       <div className=" w-1/5 bg-primary text-white py-10 px-10">
-        <NavLink to="/dashboard/cart">Cart ({cart.length})</NavLink>
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <NavLink to="/dashboard/cart">Cart ({cart.length})</NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/users">Users</NavLink>
+          </li>
+        </ul>
       </div>
       <div className=" w-4/5 py-10">
         <Outlet></Outlet>
