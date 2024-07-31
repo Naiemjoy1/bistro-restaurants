@@ -5,7 +5,7 @@ const Dashboard = () => {
   const [cart] = useCart();
 
   return (
-    <div className="flex container mx-auto justify-between gap-4">
+    <div className="flex container mx-auto justify-between gap-4 h-screen">
       <div className=" w-1/5 bg-primary text-white py-10 px-10">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -16,6 +16,9 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="/dashboard/additems">Add Items</NavLink>
+          </li>
+          <li>
+            <NavLink to="/dashboard/manageitems">Manage Items</NavLink>
           </li>
         </ul>
       </div>
