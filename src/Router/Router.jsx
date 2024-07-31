@@ -9,6 +9,7 @@ import Registration from "../Pages/Registration/Registration";
 import PrivateRoute from "../Components/Private/PrivateRoute";
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import Users from "../Pages/Dashboard/Users/Users";
+import AddItems from "../Pages/Dashboard/AddItems/AddItems";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ export const router = createBrowserRouter([
           {
             path: "users",
             element: <Users></Users>,
+          },
+          {
+            path: "additems",
+            element: <AddItems></AddItems>,
           },
         ],
       },
