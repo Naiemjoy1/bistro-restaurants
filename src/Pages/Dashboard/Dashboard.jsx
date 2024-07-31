@@ -1,8 +1,11 @@
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../../Components/Hooks/useCart";
+import useAdmin from "../../Components/Hooks/useAdmin";
 
 const Dashboard = () => {
   const [cart] = useCart();
+  const [isAdmin] = useAdmin();
+  console.log(isAdmin);
 
   return (
     <div className="flex container mx-auto justify-between gap-4">
