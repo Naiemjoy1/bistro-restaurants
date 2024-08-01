@@ -12,6 +12,9 @@ const Dashboard = () => {
             <NavLink to="/dashboard/cart">Cart ({cart.length})</NavLink>
           </li>
           <li>
+            <NavLink to="/dashboard/history">history</NavLink>
+          </li>
+          <li>
             <NavLink to="/dashboard/users">Users</NavLink>
           </li>
           <li>
