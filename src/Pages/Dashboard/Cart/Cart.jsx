@@ -2,6 +2,7 @@ import Swal from "sweetalert2";
 import useCart from "../../../Components/Hooks/useCart";
 import useAxiosSecure from "../../../Components/Hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import CheckOutSSL from "../Payment/CheckOutSSL";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -41,6 +42,7 @@ const Cart = () => {
         <Link to="/dashboard/payment">
           <button className="btn btn-primary btn-sm">Pay</button>
         </Link>
+        <CheckOutSSL></CheckOutSSL>
       </div>
       <div className="overflow-x-auto">
         <table className="table">
