@@ -34,12 +34,16 @@ const ManageItems = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <span className="loading loading-spinner loading-lg text-primary"></span>
+      </div>
+    );
   }
 
   return (
     <div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto overflow-y-auto h-[700px]">
         <table className="table">
           {/* head */}
           <thead>
