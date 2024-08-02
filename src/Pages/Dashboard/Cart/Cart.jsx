@@ -3,6 +3,7 @@ import useCart from "../../../Components/Hooks/useCart";
 import useAxiosSecure from "../../../Components/Hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
 import CheckOutSSL from "../Payment/CheckOutSSL";
+import Bkash from "../Payment/Bkash";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -43,6 +44,7 @@ const Cart = () => {
           <button className="btn btn-primary btn-sm">Pay</button>
         </Link>
         <CheckOutSSL></CheckOutSSL>
+        <Bkash></Bkash>
       </div>
       <div className="overflow-x-auto">
         <table className="table">
